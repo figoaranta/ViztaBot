@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 async function scrapeQR() {
     // Setting up puppeteer
-    const browser = await puppeteer.launch({ args: ['--no-sandbox', "--disabled-setupid-sandbox"] }).catch(error => {
+    const browser = await puppeteer.launch({ args: ['--no-sandbox', "--disabled-setuid-sandbox"] }).catch(error => {
         console.log(error);
     });
     const page = await browser.newPage().catch(error => {
