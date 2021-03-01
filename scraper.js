@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 async function scrapeQR() {
     // Setting up puppeteer
-    const browser = await puppeteer.launch({ args: ['--no-sandbox', "--disabled-setuid-sandbox"] }).catch(error => {
+    const browser = await puppeteer.launch({ args: ['--no-sandbox', "--no-zygote", "--incognito", "--single-process", "--disabled-setuid-sandbox"] }).catch(error => {
         console.log(error);
     });
     const page = await browser.newPage().catch(error => {
@@ -19,7 +19,7 @@ async function scrapeQR() {
         'value': 'oa5l3ice81nhjd59ntfd5pj2u1',
     })
 
-    await page.goto('https://www.viztagym.id/member/qr-code.php', { waitUntil: 'networkidle2' }).catch(error => {
+    await page.goto('https://www.viztagym.id/member/qr-code.php').catch(error => {
         console.log(error);
     });
     try {
