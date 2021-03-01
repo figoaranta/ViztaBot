@@ -27,12 +27,12 @@ async function scrapeQR() {
         const src = await el.getProperty('src');
         const srcTxt = await src.jsonValue();
 
+        await browser.close();
         return srcTxt
+
     } catch (error) {
         console.log(error)
     }
-
-    await browser.close();
 }
 
 module.exports = { scrapeQR };

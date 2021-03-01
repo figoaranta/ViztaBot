@@ -4,11 +4,12 @@ const app = express();
 
 
 app.get('/', async (req, res) => {
-    // res.send("Hello world")
-    const QR = await scraper.scrapeQR().catch(error => {
-        console.log(error);
-    });
-    QR ? res.send(`<img src='${QR}' alt="Figo's QR" width="350" height="350">`) : res.send("Refresh the page");
+    try {
+        const QR = await scraper.scrapeQR()
+        res.send(`<img src='${QR}' alt="Figo's QR" width="350" height="350">`)
+    } catch (error) {
+        console.log
+    }
 });
 
 app.listen(process.env.PORT || 8000);
