@@ -1,6 +1,4 @@
 const express = require('express')
-const contentScaper = require("./contentScraper");
-const translator = require("./translator");
 const app = express();
 
 const chapterRoute = require('./routes/chapter');
