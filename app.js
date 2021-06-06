@@ -1,14 +1,18 @@
 const express = require('express')
-const scraper = require("./scraper");
+const contentScaper = require("./contentScraper");
+const translator = require("./translator");
 const app = express();
 
+const chapterRoute = require('./routes/chapter');
+app.use('/chapter', chapterRoute);
 
 app.get('/', async (req, res) => {
     try {
-        const QR = await scraper.scrapeQR()
-        res.send(`<img src='${QR}' alt="Figo's QR" width="350" height="350">`)
+        res.send("Halo ma")
     } catch (error) {
         console.log
     }
 });
+
+
 app.listen(process.env.PORT || 8000);
