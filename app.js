@@ -6,7 +6,7 @@ app.use('/chapter', chapterRoute);
 
 app.get('/', async (req, res) => {
     try {
-        res.send("Halo ma")
+        res.send("Halo mama")
     } catch (error) {
         console.log
     }
