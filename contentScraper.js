@@ -28,4 +28,3 @@ async function scrapeContent(chapter) {
 module.exports = { scrapeContent };
 //(\(adsbygoogle = window.adsbygoogle \|+ \[]\)\.push\({}\);)|(\")
 //(/[^\w\s]/gi, '')
-console.log(links[1065])

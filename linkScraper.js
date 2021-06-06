@@ -12,6 +12,7 @@ async function scrapeLinks() {
 
     await page.goto('https://www.novelhall.com/evil-emperor-loves-the-crap-consort-9170/', { waitUntil: 'networkidle2' }).catch(error => {
         console.log(error);
+
     });
 
     let data = await page.evaluate(() => {
