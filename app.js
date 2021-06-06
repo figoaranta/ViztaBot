@@ -1,9 +1,11 @@
 const express = require('express')
 const app = express();
+const cors = require('cors');
 
 const chapterRoute = require('./routes/chapter');
-app.use('/chapter', chapterRoute);
 
+app.use(cors());
+app.use('/chapter', chapterRoute);
 app.get('/', async (req, res) => {
     try {
         res.send("Halo mama")
