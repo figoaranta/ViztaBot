@@ -17,7 +17,6 @@ router.get('/:chapterId', async (req, res) => {
             res.send("Something's wrong, chapter may be unavailable currently.")
         }
     }
-
 });
 
 module.exports = router;
