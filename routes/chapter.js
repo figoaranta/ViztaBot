@@ -18,4 +18,5 @@ router.get('/:chapterId', async (req, res) => {
         }
     }
 });
+
 module.exports = router;
