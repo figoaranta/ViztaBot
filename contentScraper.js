@@ -11,9 +11,9 @@ async function scrapeContent(chapter) {
     const page = await browser.newPage().catch(error => {
         console.log(error);
     });
-    await page.setDefaultNavigationTimeout(0);
+    // await page.setDefaultNavigationTimeout(0);
 
-    await page.goto(links[chapter], { waitUntil: 'networkidle2' }).catch(error => {
+    await page.goto(links[chapter], { waitUntil: 'load', timeout: 0 }).catch(error => {
         console.log(error);
     });
 
