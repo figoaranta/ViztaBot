@@ -13,7 +13,7 @@ async function scrapeContent(chapter) {
     });
     // await page.setDefaultNavigationTimeout(0);
 
-    await page.goto(links[chapter], { waitUntil: 'load', timeout: 0 }).catch(error => {
+    await page.goto(links[chapter], { waitUntil: 'networkidle2' }).catch(error => {
         console.log(error);
     });
 
@@ -21,8 +21,10 @@ async function scrapeContent(chapter) {
     const txt = await el.getProperty('textContent')
     const content = await txt.jsonValue()
     const regexContent = content.replace(/(\(adsbygoogle = window.adsbygoogle \|+ \[]\)\.push\({}\);)|(\")/gi, '')
+    await page.close();
     await browser.close();
     return { regexContent };
+
 }
 
 module.exports = { scrapeContent };
